@@ -2,11 +2,75 @@
 <html>
     <head>
         <title>FCC Image Search API</title>
+        <!-- Compressed Foundation CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css">
+        <link rel="stylesheet" href="/cs/styles.css">
     </head>
     <body>
-        <h1>FCC Image Search API</h1>
-        <div>
-            <p>Something here</p>
+        <div class="row title">
+            <h1>FCC Image Search API</h1>
         </div>
+        
+        <div class="row">
+            
+            <form>
+                <div class="row">
+                    <div class="medium-6 column">
+                        <div class="input-group">
+                            <span class="input-group-label"><i class="fi-magnifying-glass"></i></span>
+                            <input class="input-group-field" type="search" id="query">
+                            <div class="input-group-button">
+                                <input type="submit" class="button" id="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="medium-3 column">
+                        <label>
+                            Number of results
+                            <select id="offset">
+                                <option value="1">1</option>
+                                <option value="10" selected="selected">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        
+        <div class="row">
+            <div clas="medium-6 column">
+                <p>
+                    This page redirects to an image search API which runs a search on the public gallery of Imgur. This project is the
+                    FCC Image Abstraction Layer project; more info can be found 
+                    <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer">here.</a>
+                </p>
+                <p>
+                    To use the API directly, navigate to <a href="/api/search/">/api/search/</a> and add a query and offset in the following format
+                    <code>?q=query&offset=10</code>. The offset will default to <code>1</code> result, but a query is required to the API to complete the call.
+                </p>
+                <p>
+                </p>
+                <p>
+                    To view the code, visit the github page <a href="https://github.com/bsandusky/fcc-image-search-api">here.</a>
+                </p>
+                
+            </div>
+        </div>
+        
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Compressed Foundation JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>

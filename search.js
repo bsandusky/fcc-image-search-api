@@ -2,7 +2,7 @@
 const fetch = require("node-fetch")
 const DB = require("./db")
 const rootUrl = 'https://api.imgur.com/3/gallery/search/'
-const clientId = process.env.CLIENT_ID || '65f54a1b1f25f87'
+const clientId = process.env.CLIENT_ID
 
 module.exports = {
 
