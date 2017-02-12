@@ -1,6 +1,7 @@
 'use strict'
 const express = require("express")
 const app = express()
+const search = require("./search")
 
 app.use(express.static("public"))
 
@@ -13,7 +14,21 @@ app.get("/api/latest", (req, res) => {
 })
 
 app.get("/api/search", (req, res) => {
-    res.send(req.query.q + " " + req.query.offset)
+    
+    if (!req.query.q) {
+        res.send({error: "No search term provided"})
+    } else if (!req.query.offset) {
+        req.query.offset = 1
+    }
+    
+    search.get(req.query.q).then((response) => {
+        
+        let arr = []
+        for (let i=0; i<req.query.offset; i++) {
+            arr.push(response.data[i])
+        }
+        res.send(arr)
+    })
 })
 
 
