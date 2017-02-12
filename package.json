@@ -1,5 +1,5 @@
 {
-  "name": "Image search API",
+  "name": "fcc-image-search-api",
   "version": "1.0.0",
   "description": "FCC Image Search API Project",
   "main": "app.js",
